@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Landing, Register, Error, ProtectedRoute } from './pages'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import {AddJob, AllJobs, Profile, Stats, SharedLayout} from './pages/dashboard'
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+    <BrowserRouter> 
+      <Routes>
 
-export default App;
+        <Route path='/' element={
+          <ProtectedRoute>
+              <SharedLayout/>
+          </ProtectedRoute>
+        
+        }>
+          <Route index element={<Stats/>}></Route>
+          <Route path='/all-clients'element={<AllJobs/>}></Route>
+          <Route path='/add-client' element={<AddJob/>}></Route>
+          <Route path='/profile' element={<Profile/>}></Route>
+        </Route> 
+
+        <Route path='/register' element={<Register/>} ></Route>
+        <Route path='/landing' element={<Landing />} ></Route>
+        <Route path='*' element={<Error/>} ></Route>
+
+      </Routes>
+    </BrowserRouter>
+   
+
+  )
+}
