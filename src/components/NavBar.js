@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import Wrapper from '../assets/wrappers/Navbar'
-import logo from '../assets/images/logo.svg'
+import logo from '../assets/images/efsslogo.png'
+import { Logo } from '../components'
 import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa'
 import { useAppContext } from '../context/appContext'
-import Logo from "./Logo"
+
 
 export default function NavBar() {
 

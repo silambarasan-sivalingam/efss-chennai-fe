@@ -2,8 +2,8 @@ import React from "react";
 import Wrapper from "../assets/wrappers/SmallSidebar";
 import { FaTimes } from "react-icons/fa";
 import { useAppContext } from "../context/appContext";
-import Logo from "./Logo";
-import logo from "../assets/images/logo.svg";
+import logo from '../assets/images/efsslogo.png'
+import { Logo } from '../components'
 import NavLinks from "./NavLinks";
 
 export default function SmallSidebar() {
