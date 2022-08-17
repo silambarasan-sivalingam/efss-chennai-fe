@@ -1,6 +1,6 @@
 import React from 'react'
 import { Landing, Register, Error, ProtectedRoute } from './pages'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import {AddJob, AllJobs, Profile, Stats, SharedLayout} from './pages/dashboard'
 
 
@@ -8,7 +8,7 @@ import {AddJob, AllJobs, Profile, Stats, SharedLayout} from './pages/dashboard'
 export default function App() {
   return (
     
-    <BrowserRouter> 
+    <HashRouter> 
       <Routes>
 
         <Route path='/' element={
@@ -28,7 +28,7 @@ export default function App() {
         <Route path='*' element={<Error/>} ></Route>
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
    
 
   )
